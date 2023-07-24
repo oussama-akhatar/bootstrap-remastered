@@ -1,0 +1,18 @@
+@import '../src/scss/Variables';
+@import '../src/scss/Colors';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: $dark;
+}
+
+#root {
+    height: 100%;
+}

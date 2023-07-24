@@ -1,0 +1,65 @@
+@import '../scss/Colors';
+@import '../scss/Variables';
+
+
+.container {
+    margin: 3rem 10rem;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+
+    tr {
+        transition: .2s;
+        &:nth-child(even) {
+            background-color: $light;
+        }
+
+        &:hover {
+            background-color: $gray-500;
+            // color: $white;
+        }
+
+        &:last-child {
+            td {
+                &:first-child {
+                    border-end-start-radius: $borderRadius;
+                }
+                &:last-child {
+                    border-end-end-radius: $borderRadius;
+                }
+            }
+        }
+
+        th {
+            // border: 1px solid #ddd;
+            padding: $spacing-md;
+            text-align: left;
+            background-color: $dark;
+            color: $white;
+            text-transform: capitalize;
+
+            &:first-child {
+                border-top-left-radius: $borderRadius;
+            }
+            &:last-child {
+                border-top-right-radius: $borderRadius ;
+            }
+        }
+
+        td {
+            padding: $spacing-md;
+            i {
+                font-size: 1.3rem;
+                cursor: pointer;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,1661 @@
+@import '../scss/Colors';
+@import '../scss/Variables';
+
+body {
+    background-image: linear-gradient(180deg, rgba(#fff, 0.01), rgba(#fff, 1) 85%), radial-gradient(ellipse at top left, rgba(rgb(13, 110, 253), 0.5), transparent 50%), radial-gradient(ellipse at top right, rgba(rgb(255, 228, 132), 0.5), transparent 50%), radial-gradient(ellipse at center right, rgba(rgb(112.520718, 44.062154, 249.437846), 0.5), transparent 50%), radial-gradient(ellipse at center left, rgba(rgba(214, 51, 132), 0.5), transparent 50%);
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero {
+    height: 900px;
+    width: 66%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 6.5rem;
+
+    .version {
+        display: flex;
+        flex-direction: column;
+        color: $dark;
+        text-decoration: none;
+        margin-bottom: 1.5rem !important;
+        justify-content: center;
+        align-items: center;
+
+        @include breakpoint(md) {
+            flex-direction: row;
+            margin-bottom: 0;
+        }
+
+        strong {
+            background-color: #fce8ac;
+            border: 1px solid $warning;
+            border-radius: .5rem;
+            padding: .5rem;
+            margin-right: .5rem;
+            margin-bottom: 1rem;
+
+            @include breakpoint(md) {
+                margin-bottom: 0;
+            }
+        }
+
+        span {
+            color: $secondary;
+        }
+    }
+
+    img {
+        margin-left: auto;
+        margin-right: auto;
+        display: none;
+
+        @include breakpoint(md) {
+            display: block;
+        }
+
+    }
+
+    h1 {
+        margin-bottom: 1rem;
+        font-size: 3rem !important;
+        font-weight: 400 !important;
+
+        @include breakpoint(md) {
+            margin-bottom: 1rem;
+            font-size: 4rem !important;
+            font-weight: 600 !important;
+        }
+    }
+
+    p.lead {
+        font-size: 1.2rem;
+        font-weight: 300;
+
+        @include breakpoint(md) {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+    }
+
+    .install_info {
+        display: flex;
+        gap: 1rem;
+        margin: 2rem 0;
+        flex-direction: column;
+        justify-content: center;
+
+        @include breakpoint(md) {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            margin: 2rem 0;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .install_info_ct {
+            display: inline-table;
+            font-size: 1.25rem;
+
+            .install {
+                display: flex;
+                align-items: center;
+                margin: 0;
+                border: .5px solid $gray-500 ;
+                background-color: $gray-400;
+                border-radius: 0.5rem;
+
+                .clipboard {
+                    padding-right: 1rem;
+
+                    .btn_clipboard {
+                        display: block;
+                        background-color: transparent;
+                        padding: 0.5em;
+                        margin: 0;
+                        border: 0;
+                        border-radius: 0.25rem;
+                        cursor: pointer;
+
+                        i {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+
+                .highlight {
+                    margin: 0;
+                    position: relative;
+                    padding: 1rem 1rem;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    background-color: rgba($light, 0.075);
+                    border-radius: calc(0.5rem - 1px);
+
+                    pre {
+                        display: block;
+                        font-size: .875em;
+                        padding: 0;
+                        overflow: hidden;
+                        white-space: pre;
+                        background-color: transparent;
+                        border: 0;
+
+                        code {
+                            font-size: inherit;
+                            word-wrap: normal;
+                            word-break: normal;
+                        }
+                    }
+                }
+            }
+        }
+
+        .read {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: .5rem;
+            padding: 1rem 1rem;
+            font-weight: 600;
+            color: $white;
+            background: $indigo;
+            border-color: $indigo;
+
+            &:hover {
+                color: $white;
+                background: #6528e0;
+            }
+
+            &:active {
+                color: $white;
+                background: #5a23c8;
+                border-color: #5a23c8;
+            }
+
+            i {
+                margin-right: 1rem;
+            }
+
+            i,
+            span {
+                color: $white;
+            }
+        }
+    }
+
+    .links {
+        color: $secondary;
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        @include breakpoint(md) {
+            flex-direction: row;
+            justify-content: center;
+            gap: 0;
+        }
+        
+
+        span {
+            display: none;
+            margin: 0 1rem;
+            @include breakpoint(md) {
+                display: block;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $secondary;
+            text-decoration: underline;
+        }
+    }
+
+    .ads {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        margin-bottom: 0 !important;
+        background-color: $gray-100;
+        // width: 500px;
+        padding: 1rem;
+        margin-top: 2rem;
+        border-radius: .5rem;
+        @include breakpoint(md) {
+            width: 500px;
+        }
+
+        // img {
+        //     border-radius: .5rem;
+        // }
+        .logo_d {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            border: .7rem solid #000;
+            height: 6rem;
+            width: 8rem;
+            border-end-end-radius: 50%;
+            border-top-right-radius: 50%;
+
+            .logo_d_in {
+                position: relative;
+                background-color: transparent;
+                border: .7rem solid #000;
+                height: 3rem;
+                width: 3.5rem;
+                border-end-end-radius: 50%;
+                border-top-right-radius: 50%;
+
+                .logo_d_in_bord1 {
+                    position: relative;
+                    width: 1rem;
+                    height: 0.7rem;
+                    background: $gray-100;
+                    top: 6;
+                    margin-left: -0.7rem;
+                    margin-top: 0.95rem;
+                }
+
+                .logo_d_in_bord2 {
+                    position: relative;
+                    width: 0.7rem;
+                    height: 0.7rem;
+                    background: $gray-100;
+                    top: 6;
+                }
+            }
+        }
+
+        p {
+            text-align: left;
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.hero2 {
+    width: 58%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+    @include breakpoint(md) {
+        margin-top: 0;
+    }
+
+    .icon {
+        display: inline-block;
+        padding: .5rem 1rem;
+        margin-bottom: 1rem;
+        color: rgba($indigo, 1);
+        background-color: rgba($indigo, 0.1);
+        background-blend-mode: multiple;
+        border-radius: 1rem;
+        mix-blend-mode: darken;
+
+        i {
+            font-size: 2.5rem !important;
+        }
+    }
+
+    h2 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 600 !important;
+        line-height: 1.25 !important;
+    }
+
+    p {
+        font-size: 1.25rem;
+        font-weight: 300;
+        margin-bottom: 1rem;
+    }
+
+    .link_read_install {
+        a {
+            text-decoration: none;
+            color: $primary;
+            margin-right: 1rem;
+            border-bottom: 2px solid $primary;
+            font-weight: 600;
+        }
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+        font-weight: 300;
+        font-weight: 400 !important;
+        color: $primary;
+
+        i {
+            transition: .3s;
+        }
+        
+        &:hover {
+            i {
+                transform: translateX(.3rem);
+            }
+        }
+    }
+}
+
+.way {
+    .getstarted {
+        width: 85%;
+        text-align: center;
+        margin: 3rem auto;
+        display: flex;
+        flex-direction: column;
+        @include breakpoint(md) {
+            text-align: left;
+            width: 75%;
+            flex-direction: row;
+        }
+    
+        i {
+            font-size: 2rem;
+        }
+    
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 500 !important;
+            margin-top: .5rem;
+            margin-bottom: 1rem;
+        }
+    
+        p {
+            line-height: 1.5rem;
+    
+            a {
+                text-decoration: none;
+                color: $primary;
+                text-decoration: underline;
+            }
+        }
+    
+        .package,
+        .cdn {
+            padding: 0 3rem;
+        }
+    
+        .package {
+            margin-bottom: 3rem;
+            @include breakpoint(md) {
+                text-align: left;
+                margin-bottom: 0;
+                width: 50%;
+                border-right: 1px solid;
+            }
+    
+            .install {
+                display: flex;
+                align-items: center;
+                padding: .7rem 0;
+                margin: 1rem 0;
+                border: .5px solid $gray-300 ;
+                background-color: $gray-100;
+                border-radius: 0.5rem;
+                @include breakpoint(md) {
+                    width: 590.516px;
+                }
+    
+                .clipboard {
+                    padding-right: 1rem;
+    
+                    .btn_clipboard {
+                        display: block;
+                        background-color: transparent;
+                        padding: 0.5em;
+                        margin: 0;
+                        border: 0;
+                        border-radius: 0.25rem;
+                        cursor: pointer;
+    
+                        i {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+    
+                .highlight {
+                    margin: 0;
+                    position: relative;
+                    padding: 0.5rem 1rem;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    background-color: rgba($light, 0.075);
+                    border-radius: calc(0.5rem - 1px);
+    
+                    pre {
+                        display: block;
+                        font-size: .875em;
+                        padding: 0;
+                        margin: 0.5rem 0;
+                        overflow: hidden;
+                        white-space: pre;
+                        background-color: transparent;
+                        border: 0;
+    
+                        code {
+                            font-size: 1rem;
+                            word-wrap: normal;
+                            word-break: normal;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .cdn {
+            .install {
+                // width: 590.516px;
+                display: flex;
+                align-items: center;
+                padding: .7rem 0;
+                margin: 1rem 0;
+                border: .5px solid $gray-300 ;
+                background-color: $gray-100;
+                border-radius: 0.5rem;
+                @include breakpoint(md) {
+                    width: 590.516px;
+                }
+    
+                .clipboard {
+                    padding-right: 1rem;
+    
+                    .btn_clipboard {
+                        display: block;
+                        background-color: transparent;
+                        padding: 0.5em;
+                        margin: 0;
+                        border: 0;
+                        border-radius: 0.25rem;
+                        cursor: pointer;
+    
+                        i {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+    
+                .highlight {
+                    margin: 0;
+                    position: relative;
+                    padding: 0.5rem 1rem;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    background-color: rgba($light, 0.075);
+                    border-radius: calc(0.5rem - 1px);
+    
+                    pre {
+                        display: block;
+                        font-size: .875em;
+                        padding: 0;
+                        margin: 0.5rem 0;
+                        overflow: hidden;
+                        white-space: pre;
+                        background-color: transparent;
+                        border: 0;
+    
+                        code {
+                            font-size: 1rem;
+                            word-wrap: normal;
+                            word-break: normal;
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+}
+
+.guides {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    @include breakpoint(md) {
+        margin: 0;
+        width: 100%;
+
+    }
+    &_h2, &_p {
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+    &_brands {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        &_link {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-decoration: none;
+            margin: 1.5rem 2rem;
+            &_img {
+                margin-bottom: 1rem;
+                transition: .5s;
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+            &_span {
+                color: $dark;
+            }
+        }
+    }
+}
+
+.customSass {
+    display: flex;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 3rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &_icon {
+        display: inline-block;
+        padding: .5rem 1rem;
+        margin-bottom: 1rem;
+        color: rgba($primary, 1);
+        background-color: rgba($primary, 0.1);
+        background-blend-mode: multiple;
+        border-radius: 1rem;
+        mix-blend-mode: darken;
+
+        i {
+            font-size: 2.5rem !important;
+        }
+    }
+    &_link_read_install {
+        a {
+            text-decoration: none;
+            color: $primary;
+            margin-right: 1rem;
+            border-bottom: 2px solid $primary;
+            font-weight: 600;
+        }
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+        font-weight: 300;
+        font-weight: 400 !important;
+        color: $primary;
+
+        i {
+            transition: .3s;
+        }
+        
+        &:hover {
+            i {
+                transform: translateX(.3rem);
+            }
+        }
+    }
+    &_h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 600 !important;
+        line-height: 1.25 !important;
+    }
+
+    &_p {
+        margin: 1rem 0;
+        font-size: 1.3rem;
+    }
+}
+
+.sass {
+    .getstarted {
+        text-align: left;
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        @include breakpoint(md) {
+            text-align: left;
+            flex-direction: row;
+        }
+    
+        i {
+            font-size: 2rem;
+        }
+    
+        h2 {
+            text-align: center;
+            @include breakpoint(md) {
+                text-align: left;
+            }
+            font-size: 1.8rem;
+            font-weight: 500 !important;
+            margin-top: .5rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            line-height: 1.5rem;
+    
+            a {
+                text-decoration: none;
+                color: $primary;
+                text-decoration: underline;
+            }
+        }
+    
+        .package,
+        .cdn {
+            padding: 0 3rem;
+        }
+    
+        .package {
+            
+            margin-bottom: 3rem;
+            @include breakpoint(md) {
+                text-align: left;
+                margin-bottom: 0;
+                width: 50%;
+                border-right: 1px solid;
+            }
+    
+            .install {
+                display: flex;
+                align-items: flex-start;
+                padding: .7rem 0;
+                margin: 1rem 0;
+                border: .5px solid $gray-300 ;
+                background-color: $gray-100;
+                border-radius: 0.5rem;
+                @include breakpoint(md) {
+                    width: 590.516px;
+                }
+    
+                .clipboard {
+                    padding-right: 1rem;
+    
+                    .btn_clipboard {
+                        display: block;
+                        background-color: transparent;
+                        padding: 0.5em;
+                        margin: 0;
+                        border: 0;
+                        border-radius: 0.25rem;
+                        cursor: pointer;
+    
+                        i {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+    
+                .highlight {
+                    margin: 0;
+                    position: relative;
+                    padding: 0.5rem 1rem;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    background-color: rgba($light, 0.075);
+                    border-radius: calc(0.5rem - 1px);
+    
+                    pre {
+                        display: block;
+                        font-size: .875em;
+                        padding: 0;
+                        margin: 0.5rem 0;
+                        overflow: hidden;
+                        white-space: pre;
+                        background-color: transparent;
+                        border: 0;
+    
+                        code {
+                            font-size: 1rem;
+                            word-wrap: normal;
+                            word-break: normal;
+                            .comment {
+                                color: $secondary;
+                            }
+                            .variables {
+                                color: $danger;
+                            }
+                            .values {
+                                color: $primary;
+                            }
+                            .import {
+                                color: $indigo;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        .cdn {
+            .install {
+                // width: 590.516px;
+                display: flex;
+                align-items: flex-start;
+                padding: .7rem 0;
+                margin: 1rem 0;
+                border: .5px solid $gray-300 ;
+                background-color: $gray-100;
+                border-radius: 0.5rem;
+                @include breakpoint(md) {
+                    width: 590.516px;
+                }
+    
+                .clipboard {
+                    padding-right: 1rem;
+    
+                    .btn_clipboard {
+                        display: block;
+                        background-color: transparent;
+                        padding: 0.5em;
+                        margin: 0;
+                        border: 0;
+                        border-radius: 0.25rem;
+                        cursor: pointer;
+    
+                        i {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+    
+                .highlight {
+                    margin: 0;
+                    position: relative;
+                    padding: 0.5rem 1rem;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    background-color: rgba($light, 0.075);
+                    border-radius: calc(0.5rem - 1px);
+    
+                    pre {
+                        display: block;
+                        font-size: .875em;
+                        padding: 0;
+                        margin: 0.5rem 0;
+                        overflow: hidden;
+                        white-space: pre;
+                        background-color: transparent;
+                        border: 0;
+    
+                        code {
+                            font-size: 1rem;
+                            word-wrap: normal;
+                            word-break: normal;
+
+                            .comment {
+                                color: $secondary;
+                            }
+                            .variables {
+                                color: $danger;
+                            }
+                            .values {
+                                color: $primary;
+                            }
+                            .import {
+                                color: $indigo;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+}
+
+.cssvars {
+    display: flex;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 3rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &_icon {
+        display: inline-block;
+        padding: .5rem 1rem;
+        margin-bottom: 1rem;
+        color: rgba($danger, 1);
+        background-color: rgba($danger, 0.1);
+        background-blend-mode: multiple;
+        border-radius: 1rem;
+        mix-blend-mode: darken;
+
+        i {
+            font-size: 2.5rem !important;
+        }
+    }
+    &_link_read_install {
+        a {
+            text-decoration: none;
+            color: $primary;
+            margin-right: 1rem;
+            border-bottom: 2px solid $primary;
+            font-weight: 600;
+        }
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+        font-weight: 300;
+        font-weight: 400 !important;
+        color: $primary;
+
+        i {
+            transition: .3s;
+        }
+        
+        &:hover {
+            i {
+                transform: translateX(.3rem);
+            }
+        }
+    }
+    &_h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 600 !important;
+        line-height: 1.25 !important;
+    }
+
+    &_p {
+        margin: 1rem 0;
+        font-size: 1.3rem;
+    }
+    .getstarted {
+        text-align: left;
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        @include breakpoint(md) {
+            text-align: left;
+            flex-direction: row;
+        }
+    
+        i {
+            font-size: 2rem;
+        }
+    
+        h2 {
+            text-align: center;
+            @include breakpoint(md) {
+                text-align: left;
+            }
+            font-size: 1.8rem;
+            font-weight: 500 !important;
+            margin-top: .5rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            line-height: 1.5rem;
+    
+            a {
+                text-decoration: none;
+                color: $primary;
+                text-decoration: underline;
+            }
+        }
+    
+        .package,
+        .cdn {
+            padding: 0 3rem;
+        }
+    
+        .package {
+            margin-bottom: 3rem;
+            @include breakpoint(md) {
+                text-align: left;
+                margin-bottom: 0;
+                width: 50%;
+                border-right: 1px solid;
+            }
+
+            .p {
+                .code {
+                    color: $danger !important;
+                }
+            }
+    
+            .install {
+                display: flex;
+                align-items: flex-start;
+                padding: .7rem 0;
+                margin: 1rem 0;
+                border: .5px solid $gray-300 ;
+                background-color: $gray-100;
+                border-radius: 0.5rem;
+                @include breakpoint(md) {
+                    width: 590.516px;
+                }
+    
+                .clipboard {
+                    padding-right: 1rem;
+    
+                    .btn_clipboard {
+                        display: block;
+                        background-color: transparent;
+                        padding: 0.5em;
+                        margin: 0;
+                        border: 0;
+                        border-radius: 0.25rem;
+                        cursor: pointer;
+    
+                        i {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+    
+                .highlight {
+                    margin: 0;
+                    position: relative;
+                    padding: 0.5rem 1rem;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    background-color: rgba($light, 0.075);
+                    border-radius: calc(0.5rem - 1px);
+    
+                    pre {
+                        display: block;
+                        font-size: .875em;
+                        padding: 0;
+                        margin: 0.5rem 0;
+                        overflow: hidden;
+                        white-space: pre;
+                        background-color: transparent;
+                        border: 0;
+    
+                        code {
+                            font-size: 1rem;
+                            word-wrap: normal;
+                            word-break: normal;
+                            .comment {
+                                color: $secondary;
+                            }
+                            .variables {
+                                color: $danger;
+                            }
+                            .values {
+                                color: $primary;
+                            }
+                            .import {
+                                color: $indigo;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        .cdn {
+            .install {
+                // width: 590.516px;
+                display: flex;
+                align-items: flex-start;
+                padding: .7rem 0;
+                margin: 1rem 0;
+                border: .5px solid $gray-300 ;
+                background-color: $gray-100;
+                border-radius: 0.5rem;
+                @include breakpoint(md) {
+                    width: 590.516px;
+                }
+    
+                .clipboard {
+                    padding-right: 1rem;
+    
+                    .btn_clipboard {
+                        display: block;
+                        background-color: transparent;
+                        padding: 0.5em;
+                        margin: 0;
+                        border: 0;
+                        border-radius: 0.25rem;
+                        cursor: pointer;
+    
+                        i {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+    
+                .highlight {
+                    margin: 0;
+                    position: relative;
+                    padding: 0.5rem 1rem;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    background-color: rgba($light, 0.075);
+                    border-radius: calc(0.5rem - 1px);
+    
+                    pre {
+                        display: block;
+                        font-size: .875em;
+                        padding: 0;
+                        margin: 0.5rem 0;
+                        overflow: hidden;
+                        white-space: pre;
+                        background-color: transparent;
+                        border: 0;
+    
+                        code {
+                            font-size: 1rem;
+                            word-wrap: normal;
+                            word-break: normal;
+
+                            .comment {
+                                color: $secondary;
+                            }
+                            .variables {
+                                color: $danger;
+                            }
+                            .values {
+                                color: $primary;
+                            }
+                            .import {
+                                color: $indigo;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+}
+
+.bsicon {
+    display: flex;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 3rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .css {
+        img {
+            padding: 2rem 4rem;
+            @include breakpoint(md) {
+                margin-top: 2rem;
+                padding: 0;
+            }
+        }  
+    }
+    &_icon {
+        display: inline-block;
+        padding: .5rem 1rem;
+        margin-bottom: 1rem;
+        color: rgba($success, 1);
+        background-color: rgba($success, 0.1);
+        background-blend-mode: multiple;
+        border-radius: 1rem;
+        mix-blend-mode: darken;
+
+        i {
+            font-size: 2.5rem !important;
+        }
+    }
+    &_link_read_install {
+        a {
+            text-decoration: none;
+            color: $primary;
+            margin-right: 1rem;
+            border-bottom: 2px solid $primary;
+            font-weight: 600;
+        }
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+        font-weight: 300;
+        font-weight: 400 !important;
+        color: $primary;
+
+        i {
+            transition: .3s;
+        }
+        
+        &:hover {
+            i {
+                transform: translateX(.3rem);
+            }
+        }
+    }
+    &_h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 600 !important;
+        line-height: 1.25 !important;
+    }
+
+    &_p {
+        margin: 1rem 0;
+        font-size: 1.3rem;
+    }
+    .getstarted {
+        text-align: left;
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        @include breakpoint(md) {
+            text-align: left;
+            flex-direction: row;
+        }
+    
+        i {
+            font-size: 2rem;
+        }
+    
+        h2 {
+            text-align: center;
+            @include breakpoint(md) {
+                text-align: left;
+            }
+            font-size: 1.8rem;
+            font-weight: 500 !important;
+            margin-top: .5rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            line-height: 1.5rem;
+    
+            a {
+                text-decoration: none;
+                color: $primary;
+                text-decoration: underline;
+            }
+        }
+    
+        .package,
+        .cdn {
+            padding: 0 3rem;
+        }
+    
+        .package {
+            margin-bottom: 3rem;
+            @include breakpoint(md) {
+                text-align: left;
+                margin-bottom: 0;
+                width: 50%;
+                border-right: 1px solid;
+            }
+
+            .p {
+                .code {
+                    color: $danger !important;
+                }
+            }
+    
+            .install {
+                display: flex;
+                align-items: flex-start;
+                padding: .7rem 0;
+                margin: 1rem 0;
+                border: .5px solid $gray-300 ;
+                background-color: $gray-100;
+                border-radius: 0.5rem;
+                @include breakpoint(md) {
+                    width: 590.516px;
+                }
+    
+                .clipboard {
+                    padding-right: 1rem;
+    
+                    .btn_clipboard {
+                        display: block;
+                        background-color: transparent;
+                        padding: 0.5em;
+                        margin: 0;
+                        border: 0;
+                        border-radius: 0.25rem;
+                        cursor: pointer;
+    
+                        i {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+    
+                .highlight {
+                    margin: 0;
+                    position: relative;
+                    padding: 0.5rem 1rem;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    background-color: rgba($light, 0.075);
+                    border-radius: calc(0.5rem - 1px);
+    
+                    pre {
+                        display: block;
+                        font-size: .875em;
+                        padding: 0;
+                        margin: 0.5rem 0;
+                        overflow: hidden;
+                        white-space: pre;
+                        background-color: transparent;
+                        border: 0;
+    
+                        code {
+                            font-size: 1rem;
+                            word-wrap: normal;
+                            word-break: normal;
+                            .comment {
+                                color: $secondary;
+                            }
+                            .variables {
+                                color: $danger;
+                            }
+                            .values {
+                                color: $primary;
+                            }
+                            .import {
+                                color: $indigo;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        .cdn {
+            .install {
+                // width: 590.516px;
+                display: flex;
+                align-items: flex-start;
+                padding: .7rem 0;
+                margin: 1rem 0;
+                border: .5px solid $gray-300 ;
+                background-color: $gray-100;
+                border-radius: 0.5rem;
+                @include breakpoint(md) {
+                    width: 590.516px;
+                }
+    
+                .clipboard {
+                    padding-right: 1rem;
+    
+                    .btn_clipboard {
+                        display: block;
+                        background-color: transparent;
+                        padding: 0.5em;
+                        margin: 0;
+                        border: 0;
+                        border-radius: 0.25rem;
+                        cursor: pointer;
+    
+                        i {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+    
+                .highlight {
+                    margin: 0;
+                    position: relative;
+                    padding: 0.5rem 1rem;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    background-color: rgba($light, 0.075);
+                    border-radius: calc(0.5rem - 1px);
+    
+                    pre {
+                        display: block;
+                        font-size: .875em;
+                        padding: 0;
+                        margin: 0.5rem 0;
+                        overflow: hidden;
+                        white-space: pre;
+                        background-color: transparent;
+                        border: 0;
+    
+                        code {
+                            font-size: 1rem;
+                            word-wrap: normal;
+                            word-break: normal;
+
+                            .comment {
+                                color: $secondary;
+                            }
+                            .variables {
+                                color: $danger;
+                            }
+                            .values {
+                                color: $primary;
+                            }
+                            .import {
+                                color: $indigo;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+}
+
+.themes {
+    display: flex;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 3rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .css {
+        img {
+            padding: 2rem 4rem;
+            @include breakpoint(md) {
+                margin-top: 2rem;
+                padding: 0;
+            }
+        }  
+    }
+    &_icon {
+        display: inline-block;
+        padding: .5rem 1rem;
+        margin-bottom: 1rem;
+        color: rgba($primary, 1);
+        background-color: rgba($primary, 0.1);
+        background-blend-mode: multiple;
+        border-radius: 1rem;
+        mix-blend-mode: darken;
+
+        i {
+            font-size: 2.5rem !important;
+        }
+    }
+    &_link_read_install {
+        a {
+            text-decoration: none;
+            color: $primary;
+            margin-right: 1rem;
+            border-bottom: 2px solid $primary;
+            font-weight: 600;
+        }
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+        font-weight: 300;
+        font-weight: 400 !important;
+        color: $primary;
+
+        i {
+            transition: .3s;
+        }
+        
+        &:hover {
+            i {
+                transform: translateX(.3rem);
+            }
+        }
+    }
+    &_h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 600 !important;
+        line-height: 1.25 !important;
+    }
+
+    &_p {
+        margin: 1rem 0;
+        font-size: 1.3rem;
+    }
+    .getstarted {
+        text-align: left;
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        @include breakpoint(md) {
+            text-align: left;
+            flex-direction: row;
+        }
+    
+        i {
+            font-size: 2rem;
+        }
+    
+        h2 {
+            text-align: center;
+            @include breakpoint(md) {
+                text-align: left;
+            }
+            font-size: 1.8rem;
+            font-weight: 500 !important;
+            margin-top: .5rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            line-height: 1.5rem;
+    
+            a {
+                text-decoration: none;
+                color: $primary;
+                text-decoration: underline;
+            }
+        }
+    
+        .package,
+        .cdn {
+            padding: 0 3rem;
+        }
+    
+        .package {
+            margin-bottom: 3rem;
+            @include breakpoint(md) {
+                text-align: left;
+                margin-bottom: 0;
+                width: 50%;
+                border-right: 1px solid;
+            }
+
+            .p {
+                .code {
+                    color: $danger !important;
+                }
+            }
+    
+            .install {
+                display: flex;
+                align-items: flex-start;
+                padding: .7rem 0;
+                margin: 1rem 0;
+                border: .5px solid $gray-300 ;
+                background-color: $gray-100;
+                border-radius: 0.5rem;
+                @include breakpoint(md) {
+                    width: 590.516px;
+                }
+    
+                .clipboard {
+                    padding-right: 1rem;
+    
+                    .btn_clipboard {
+                        display: block;
+                        background-color: transparent;
+                        padding: 0.5em;
+                        margin: 0;
+                        border: 0;
+                        border-radius: 0.25rem;
+                        cursor: pointer;
+    
+                        i {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+    
+                .highlight {
+                    margin: 0;
+                    position: relative;
+                    padding: 0.5rem 1rem;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    background-color: rgba($light, 0.075);
+                    border-radius: calc(0.5rem - 1px);
+    
+                    pre {
+                        display: block;
+                        font-size: .875em;
+                        padding: 0;
+                        margin: 0.5rem 0;
+                        overflow: hidden;
+                        white-space: pre;
+                        background-color: transparent;
+                        border: 0;
+    
+                        code {
+                            font-size: 1rem;
+                            word-wrap: normal;
+                            word-break: normal;
+                            .comment {
+                                color: $secondary;
+                            }
+                            .variables {
+                                color: $danger;
+                            }
+                            .values {
+                                color: $primary;
+                            }
+                            .import {
+                                color: $indigo;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        .cdn {
+            .install {
+                // width: 590.516px;
+                display: flex;
+                align-items: flex-start;
+                padding: .7rem 0;
+                margin: 1rem 0;
+                border: .5px solid $gray-300 ;
+                background-color: $gray-100;
+                border-radius: 0.5rem;
+                @include breakpoint(md) {
+                    width: 590.516px;
+                }
+    
+                .clipboard {
+                    padding-right: 1rem;
+    
+                    .btn_clipboard {
+                        display: block;
+                        background-color: transparent;
+                        padding: 0.5em;
+                        margin: 0;
+                        border: 0;
+                        border-radius: 0.25rem;
+                        cursor: pointer;
+    
+                        i {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+    
+                .highlight {
+                    margin: 0;
+                    position: relative;
+                    padding: 0.5rem 1rem;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    background-color: rgba($light, 0.075);
+                    border-radius: calc(0.5rem - 1px);
+    
+                    pre {
+                        display: block;
+                        font-size: .875em;
+                        padding: 0;
+                        margin: 0.5rem 0;
+                        overflow: hidden;
+                        white-space: pre;
+                        background-color: transparent;
+                        border: 0;
+    
+                        code {
+                            font-size: 1rem;
+                            word-wrap: normal;
+                            word-break: normal;
+
+                            .comment {
+                                color: $secondary;
+                            }
+                            .variables {
+                                color: $danger;
+                            }
+                            .values {
+                                color: $primary;
+                            }
+                            .import {
+                                color: $indigo;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+}
